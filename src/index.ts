@@ -1,6 +1,13 @@
 
 import * as StellarSdk from 'stellar-sdk';
-import * as musig from '@futuretense/ed25519-musig';
+
+import {
+  Round,
+  Config as BaseConfig,
+  Session as BaseSession
+} from '@futuretense/ed25519-musig';
+
+export { Round };
 
 const envelopeType = StellarSdk.xdr.EnvelopeType.envelopeTypeTx().toXDR();
 
@@ -20,7 +27,7 @@ function getTransactionHash(
     );
 }
 
-export class Config extends musig.Config {
+export class Config extends BaseConfig {
 
     public constructor(publicKeys: string[]) {
         const keyBufs = publicKeys.map(
@@ -34,7 +41,7 @@ export class Config extends musig.Config {
     }
 }
 
-export class Session extends musig.Session {
+export class Session extends BaseSession {
 
     public constructor(
         config: Config,
