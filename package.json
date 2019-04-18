@@ -10,7 +10,7 @@
   "author": "Johan Stén <johan@futuretense.io>",
   "license": "MIT",
   "dependencies": {
-    "@futuretense/ed25519-musig": "0.0.2",
+    "@futuretense/ed25519-musig": "0.0.4",
     "stellar-sdk": "^0.15.0"
   },
   "devDependencies": {
